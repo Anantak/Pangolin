@@ -1,4 +1,4 @@
-#find_package(CUDA QUIET)
+find_package(CUDA)
 find_package(Oculus QUIET)
 
 # All examples depend on Pangolin GUI
@@ -28,9 +28,9 @@ if(BUILD_PANGOLIN_GUI)
 
 #      This sample fails on many platforms, so exclude it for now,
 #      until we can create a better cmake test for support.
-#      ## VBODisplay Sample requires CUDA
-#      if( CUDA_FOUND )
-#        add_subdirectory(VBODisplay)
-#      endif()
+      ## VBODisplay Sample requires CUDA
+      if( CUDA_FOUND )
+        add_subdirectory(VBODisplay)
+      endif()
     endif()
 endif()
